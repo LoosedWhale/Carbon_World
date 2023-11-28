@@ -5737,8 +5737,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: collisionOffset
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: movementFilter.layerMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727454296626517836, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: m_Name

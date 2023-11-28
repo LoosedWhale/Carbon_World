@@ -5,7 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
-    public float health = 1;
+    public float health = 6f;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
 
     public float Health {
         set {
@@ -30,9 +35,7 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(1.5f); // Adjust the delay time as needed 
         RemoveEnemy(); 
     }
-    private void Start() {
-        animator = GetComponent<Animator>();
-    }
+
 
     public void Defeated(){
         animator.SetTrigger("Defeated");
