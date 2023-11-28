@@ -35,10 +35,12 @@ public class PlayerController : MonoBehaviour
                 bool success = TryMove(movementInput);
 
                 if(!success) {
+                    // If movement in the X direction failed, try to move in the Y direction
                     success = TryMove(new Vector2(movementInput.x, 0));
                 }
 
                 if(!success) {
+                    // If movement in the Y direction failed, try to move in the X direction
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
                 
@@ -66,9 +68,11 @@ public class PlayerController : MonoBehaviour
                 moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
 
             if(count == 0){
+                // If there are no collisions, move the body
                 rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
                 return true;
             } else {
+                // If there are collisions, don't move the body
                 return false;
             }
         } else {
@@ -79,16 +83,19 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnMove(InputValue movementValue) {
+        // Get the movement input from the input system
         movementInput = movementValue.Get<Vector2>();
     }
 
     void OnFire() {
+        // Trigger the sword attack animation
         animator.SetTrigger("swordAttack");
     }
 
     public void SwordAttack() {
+        // Lock movement while attacking
         LockMovement();
-
+        // Trigger the sword attack
         if(spriteRenderer.flipX == true){
             swordAttack.AttackLeft();
         } else {
