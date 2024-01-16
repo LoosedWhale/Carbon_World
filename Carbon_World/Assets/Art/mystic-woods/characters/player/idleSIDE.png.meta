@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e4734a00d1806c24dbdda8c788fa4bc7
+guid: 07003188cb4ba174aba6291911bcd9ae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idleFRONT_Real_0
+      name: idleSIDE_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee9a0539b1a55d429905f073dadb1d2
-      internalID: 1885135785
+      spriteID: 23820e28d5c8dc0449a0133784bedced
+      internalID: 1199073339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idleFRONT_Real_1
+      name: idleSIDE_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0fa7cd52029292438c9b270177029a6
-      internalID: -227040118
+      spriteID: bb05674c2e7cf6449a81f473d4451d1a
+      internalID: 89903709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idleFRONT_Real_2
+      name: idleSIDE_2
       rect:
         serializedVersion: 2
         x: 64
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfbd55b451be1e4faed0edad1c686f6
-      internalID: -1078128619
+      spriteID: 1b6a25834f16c5042bc4d2ac1d6159f6
+      internalID: -1796289718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idleFRONT_Real_3
+      name: idleSIDE_3
       rect:
         serializedVersion: 2
         x: 96
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47fc6c86df3ccf647a37ffb848ad1654
-      internalID: 2023289214
+      spriteID: f92998f0381a3f64aa506309473878ca
+      internalID: 1150688838
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idleFRONT_Real_0: 1885135785
-      idleFRONT_Real_1: -227040118
-      idleFRONT_Real_2: -1078128619
-      idleFRONT_Real_3: 2023289214
+      idleSIDE_0: 1199073339
+      idleSIDE_1: 89903709
+      idleSIDE_2: -1796289718
+      idleSIDE_3: 1150688838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,8 @@ public class PlayerController : MonoBehaviour
             } else if (movementInput.x > 0) {
                 spriteRenderer.flipX = false;
             }
+
+
         }
     }
 

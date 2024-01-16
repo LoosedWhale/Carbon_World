@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 87183125d2e9b6d48a39aba83bda81c4
+guid: db56867b0871b094e9f98df6dd5d9f5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,11 +44,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idleFRONT_0
+      name: fightSIDA_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deccb418bea51474693f145e8ecd9e1a
-      internalID: -880222572
+      spriteID: b2e2907c337fd6546b81391c854ba0f9
+      internalID: -795700278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idleFRONT_1
+      name: fightSIDA_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a279a9d4bd9d6f41ab63b2a98775456
-      internalID: 1685424104
+      spriteID: 21cb309a87f53674f90d841fc22bbb51
+      internalID: -1007374371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idleFRONT_2
+      name: fightSIDA_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bd0b4cb6af0054b81b445441aeec0b
+      internalID: 76913905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightSIDA_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 48
-        height: 48
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,29 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e808be6e6ce654640af537c1cc0562ca
-      internalID: -67183460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idleFRONT_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f774c56de74dd4d40823a74f4d6c8b85
-      internalID: 597235777
+      spriteID: 52a3019299254804fa2833db7ca4916f
+      internalID: -935716212
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idleFRONT_0: -880222572
-      idleFRONT_1: 1685424104
-      idleFRONT_2: -67183460
-      idleFRONT_3: 597235777
+      fightSIDA_0: -795700278
+      fightSIDA_1: -1007374371
+      fightSIDA_2: 76913905
+      fightSIDA_3: -935716212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
