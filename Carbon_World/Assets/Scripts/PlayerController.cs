@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    List<RaycastHit2D> castCollisions = new();
 
     bool canMove = true;
 
