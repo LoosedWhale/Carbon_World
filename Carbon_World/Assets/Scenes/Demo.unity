@@ -5052,9 +5052,16 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 83615695}
+  rb: {fileID: 0}
+  animator: {fileID: 1199701804}
 --- !u!4 &1199701803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312331298110724718, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+  m_PrefabInstance: {fileID: 8364841821929070469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1199701804 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3786193942022616485, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
   m_PrefabInstance: {fileID: 8364841821929070469}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1295233114
@@ -5737,6 +5744,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1199701804}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -5747,6 +5758,10 @@ PrefabInstance:
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: movementFilter.layerMask.m_Bits
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211337017170923100, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3727454296626517836, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: m_Name

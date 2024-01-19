@@ -1,48 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
-    public float health = 6f;
+    private Animator animator;
+    private float health = 4f;
 
-    private void Start() {
+    private void Start()
+    {
         animator = GetComponent<Animator>();
     }
 
-
-    public float Health {
-        set {
+    public float Health
+    {
+        set
+        {
             health = value;
 
             if (health <= 0)
             {
-                //When the enemy's health is 0 or less, call the Defeated() method and start the coroutine [https://docs.unity3d.com/ScriptReference/Coroutine.html] to remove the enemy
                 Defeated();
                 StartCoroutine(RemoveEnemyWithDelay());
             }
         }
-        get {
-            return health;
-        }
+        get { return health; }
     }
 
-    
-
-    private IEnumerator RemoveEnemyWithDelay() // This is a coroutine method that will wait for a certain amount of time before removing the enemy
+    private IEnumerator RemoveEnemyWithDelay()
     {
-        yield return new WaitForSeconds(1.5f); // Adjust the delay time as needed 
-        RemoveEnemy(); 
+        yield return new WaitForSeconds(1.5f);
+        RemoveEnemy();
     }
 
-
-    public void Defeated(){
+    public void Defeated()
+    {
         animator.SetTrigger("Defeated");
     }
 
-        public void RemoveEnemy() {
-            Destroy(gameObject);
-            //Remove the enemy from the scene
-        }
+    public void RemoveEnemy()
+    {
+        Destroy(gameObject);
     }
+
+}
