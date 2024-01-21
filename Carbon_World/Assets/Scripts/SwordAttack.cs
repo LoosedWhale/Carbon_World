@@ -1,41 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
     public Collider2D swordCollider;
-    public float damage = 2;
+    [SerializeField] private float damage = 5;
     Vector2 rightAttackOffset;
 
-    private void Start() {
+    private void Start()
+    {
         rightAttackOffset = transform.position;
     }
 
-    public void AttackRight() {
+    public void AttackRight()
+    {
         print("Attack right");
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
     }
 
-    public void AttackLeft() {
+    public void AttackLeft()
+    {
         print("Attack left");
         swordCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
+        transform.localPosition = new Vector3(-rightAttackOffset.x, rightAttackOffset.y);
     }
 
-    public void StopAttack() {
+    public void StopAttack()
+    {
         swordCollider.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy") {
-            // Deal damage to the enemy
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // Access the health property directly
             Enemy enemy = other.GetComponent<Enemy>();
 
-            if(enemy != null) {
+            if (enemy != null)
+            {
+                // Subtract damage from enemy's health
                 enemy.Health -= damage;
+       
             }
         }
     }
+
+
 }
