@@ -62,8 +62,11 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimatorParameters()
     {
         // Set animator parameters based on raw input
-        animator.SetFloat("Horizontal", movementInput.x);
-        animator.SetFloat("Vertical", movementInput.y);
+        // Ändrar inte om ingen knapp är intryckt
+        if(!(movementInput.x == 0 && movementInput.y == 0)){
+            animator.SetFloat("Horizontal", movementInput.x);
+            animator.SetFloat("Vertical", movementInput.y);
+        }
         animator.SetFloat("Speed", movementInput.sqrMagnitude);
     }
 
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateSpriteDirection()
     {
         // Set direction of sprite to movement direction
-        spriteRenderer.flipX = movementInput.x < 0;
+        spriteRenderer.flipX = animator.GetFloat("Horizontal") < 0;
     }
 
     void OnMove(InputValue movementValue)

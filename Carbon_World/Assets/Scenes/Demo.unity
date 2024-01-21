@@ -5052,8 +5052,6 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 83615695}
-  rb: {fileID: 0}
-  animator: {fileID: 1199701804}
 --- !u!4 &1199701803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5312331298110724718, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
