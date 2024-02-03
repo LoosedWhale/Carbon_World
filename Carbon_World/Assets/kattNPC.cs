@@ -9,7 +9,9 @@ public class kattNPC : MonoBehaviour
     public GameObject DialougePanel;
     public Image boyDialouge;
     public Text boyDialougeText;
+    public Text boyNameText;
     public string[] dialouge;
+    public string[] boyName;
     public Sprite[] dialougeSprites;
     private int index;
 
@@ -29,6 +31,7 @@ public class kattNPC : MonoBehaviour
                 DialougePanel.SetActive(true);
                 StartCoroutine(Typing());
                 boyDialouge.sprite = dialougeSprites[0];
+                boyNameText.text = boyName[0];
             }
         }
 
@@ -64,6 +67,7 @@ public class kattNPC : MonoBehaviour
             boyDialougeText.text = "";
             StartCoroutine(Typing());
             boyDialouge.sprite = dialougeSprites[index];
+            boyNameText.text = boyName[index];
         }
         else{
             zeroText();
