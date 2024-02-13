@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: fc30e2977a89e42449275a8dec70172d
+  - enabled: 1
+    path: Assets/Scenes/ForestPuzzle.unity
+    guid: a7412fdc832249747ad0b2ce1fb6ab71
+  - enabled: 1
+    path: Assets/Scenes/ForestLake.unity
+    guid: 5ca726201c9665d41a2157fb4dbc9d65
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f6a826003c6cb254a961c0b8d66ea191, type: 2}
