@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
+    //Den countar faktiskt inte.... den går tillbaks till 0 efter varje skript
     public int pickUpCounter = 0;
     [SerializeField]
     public Text pickUpText;
@@ -37,9 +38,8 @@ public class Pickup : MonoBehaviour
     }
 
     public void PickUp(){
-
-        Destroy(gameObject);
-        pickUpCounter++;
+        pickUpCounter = pickUpCounter + 1;
         ItemsPickedUp.text = "Items: " + pickUpCounter + "/5";
+        Destroy(gameObject);
     }
 }
