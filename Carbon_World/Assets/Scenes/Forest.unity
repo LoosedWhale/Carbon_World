@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 166615353}
   - component: {fileID: 166615352}
   - component: {fileID: 166615351}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ContinueButton fireboy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 513757681}
   - component: {fileID: 513757683}
   - component: {fileID: 513757682}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 594834534}
   - component: {fileID: 594834536}
   - component: {fileID: 594834535}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: boyDialouge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11925,7 +11925,7 @@ GameObject:
   - component: {fileID: 1191226789}
   - component: {fileID: 1191226791}
   - component: {fileID: 1191226790}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: boyName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12209,7 +12209,7 @@ GameObject:
   - component: {fileID: 1345626953}
   - component: {fileID: 1345626955}
   - component: {fileID: 1345626954}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: boyDialougeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12288,7 +12288,7 @@ GameObject:
   - component: {fileID: 1350125122}
   - component: {fileID: 1350125124}
   - component: {fileID: 1350125123}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12794,7 +12794,7 @@ GameObject:
   - component: {fileID: 1479063248}
   - component: {fileID: 1479063250}
   - component: {fileID: 1479063249}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialougePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12875,7 +12875,7 @@ GameObject:
   - component: {fileID: 1553769774}
   - component: {fileID: 1553769773}
   - component: {fileID: 1553769772}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ContinueButton firegirl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13758,7 +13758,7 @@ GameObject:
   - component: {fileID: 2044583904}
   - component: {fileID: 2044583903}
   - component: {fileID: 2044583902}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13826,7 +13826,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2044583905
 RectTransform:

@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Dialog
   - Water
   - UI
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Dialog
+    uniqueID: 2066388725
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
