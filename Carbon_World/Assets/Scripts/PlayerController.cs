@@ -141,3 +141,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 }
+
+public static class Stats {
+    public static int fireballKills = 0;
+}
