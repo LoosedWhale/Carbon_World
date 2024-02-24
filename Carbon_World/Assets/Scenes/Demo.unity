@@ -10266,7 +10266,7 @@ GameObject:
   - component: {fileID: 1449872826}
   m_Layer: 0
   m_Name: Katt
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
