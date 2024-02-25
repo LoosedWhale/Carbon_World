@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
-    //Den countar faktiskt inte.... den går tillbaks till 0 efter varje skript
-    public int pickUpCounter = 0;
+    //bajsa på dig
     [SerializeField]
     public Text pickUpText;
     public bool pickUpAllowed;
@@ -38,8 +37,10 @@ public class Pickup : MonoBehaviour
     }
 
     public void PickUp(){
-        pickUpCounter = pickUpCounter + 1;
-        ItemsPickedUp.text = "Items: " + pickUpCounter + "/5";
+        //nedan finns i playercontroller
+        Stats.pickupCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
+        //ovan finns i playercontroller
+        ItemsPickedUp.text = "Items: " + Stats.pickupCounter + "/5";
         Destroy(gameObject);
     }
 }
