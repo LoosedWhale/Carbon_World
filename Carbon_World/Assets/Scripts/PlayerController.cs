@@ -145,4 +145,5 @@ public class PlayerController : MonoBehaviour
 public static class Stats {
     public static int fireballKills = 0;
     public static int pickupCounter = 0;
+    public static int keyCounter = 0;
 }
