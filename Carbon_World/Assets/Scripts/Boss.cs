@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour {
             if (health <= 0)
             {
                 Defeated();
+                isDead = true;
                 StartCoroutine(RemoveEnemyWithDelay());
             }
         }
@@ -36,7 +37,7 @@ public class Boss : MonoBehaviour {
 
     public void Defeated()
     {
-        anim.SetTrigger("defend");
+        anim.SetTrigger("Defeated");
     }
     
 
@@ -53,20 +54,19 @@ public class Boss : MonoBehaviour {
     
     private void Update()
     {
-/*
+        /*
         if (health <= 25) {
             anim.SetTrigger("stageTwo");
         }
-
-        if (health <= 0) {
-            anim.SetTrigger("death");
-        }
-
+        */
+  
+        /*
         // give the player some time to recover before taking more damage !
         if (timeBtwDamage > 0) {
             timeBtwDamage -= Time.deltaTime;
         }
-*/
+        */
+
         healthBar.value = health;
     }
     
