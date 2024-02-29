@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
 
     public void Update(){
         if(pickUpAllowed && Input.GetKeyDown(KeyCode.E)){
+        
         PickUp();
 
     }
