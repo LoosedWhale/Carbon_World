@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class keyForest : MonoBehaviour
 {
-    
+    //THIS CODE IS USED FOR BOTH THE MAZE KEY BUT AS WELL AS THE TRASH IN THE THIRD PUZZLE!
+    // THERE ARE DIFFERENT DOOR MECHANISMS BOTH TRASHDOOR AND MAZEDOOR THESE CAN BE MEREGED INTO ONE
+    //WITH BETTER CODE BUT I SUCK SORRY
     [SerializeField]
     public Text pickUpTextKey;
     public bool pickUpAllowedKey;
@@ -16,7 +18,7 @@ public class keyForest : MonoBehaviour
     }
 
     public void Update(){
-        if(pickUpAllowedKey && Input.GetKeyDown(KeyCode.F))
+        if(pickUpAllowedKey && Input.GetKeyDown(KeyCode.E))
         PickUpKey();
     }
 
@@ -37,7 +39,7 @@ public class keyForest : MonoBehaviour
 
     public void PickUpKey(){
         //nedan finns i playercontroller
-        Stats.keyCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
+        Stats.trashCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
         //ovan finns i playercontroller
  
         Destroy(gameObject);

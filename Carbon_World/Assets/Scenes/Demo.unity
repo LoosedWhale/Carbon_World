@@ -1313,6 +1313,7 @@ MonoBehaviour:
   pickUpText: {fileID: 2064680854}
   pickUpAllowed: 0
   ItemsPickedUp: {fileID: 2066362420}
+  kattnpc: {fileID: 0}
 --- !u!61 &580882614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9723,6 +9724,7 @@ MonoBehaviour:
   pickUpText: {fileID: 2064680854}
   pickUpAllowed: 0
   ItemsPickedUp: {fileID: 2066362420}
+  kattnpc: {fileID: 0}
 --- !u!61 &1143238175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9869,6 +9871,7 @@ MonoBehaviour:
   pickUpText: {fileID: 2064680854}
   pickUpAllowed: 0
   ItemsPickedUp: {fileID: 2066362420}
+  kattnpc: {fileID: 0}
 --- !u!61 &1148653350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10015,6 +10018,7 @@ MonoBehaviour:
   pickUpText: {fileID: 2064680854}
   pickUpAllowed: 0
   ItemsPickedUp: {fileID: 2066362420}
+  kattnpc: {fileID: 0}
 --- !u!61 &1173267283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10077,6 +10081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1d6e807e7180148b548c73d6e30886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 0}
   moveSpeed: 1
   collisionOffset: 0.05
   movementFilter:
@@ -10116,6 +10121,7 @@ GameObject:
   - component: {fileID: 1224413136}
   - component: {fileID: 1224413139}
   - component: {fileID: 1224413138}
+  - component: {fileID: 1224413141}
   - component: {fileID: 1224413140}
   m_Layer: 0
   m_Name: "D\xF6rr"
@@ -10296,6 +10302,37 @@ MonoBehaviour:
   interactTextDoor: {fileID: 1699429537}
   interactWarningTextDoor: {fileID: 427325207}
   closeEnoughDoor: 0
+--- !u!114 &1224413141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224413135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aca26956d7846b4eae5d69c185cf8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 1604820646}
+  boyDialouge: {fileID: 1710517624}
+  boyDialougeText: {fileID: 1282528072}
+  boyNameText: {fileID: 1854523650}
+  dialouge:
+  - 
+  - 
+  - 
+  boyName:
+  - 
+  - 
+  - 
+  dialougeSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  contButton: {fileID: 1859249030}
+  wordSpeed: 0.04
+  playerIsClose: 0
 --- !u!1 &1282528070
 GameObject:
   m_ObjectHideFlags: 0
@@ -11097,6 +11134,7 @@ GameObject:
   - component: {fileID: 1550144945}
   - component: {fileID: 1550144944}
   - component: {fileID: 1550144943}
+  - component: {fileID: 1550144946}
   - component: {fileID: 1550144942}
   m_Layer: 0
   m_Name: medkit_pickup
@@ -11120,6 +11158,7 @@ MonoBehaviour:
   pickUpText: {fileID: 2064680854}
   pickUpAllowed: 0
   ItemsPickedUp: {fileID: 2066362420}
+  kattnpc: {fileID: 0}
 --- !u!61 &1550144943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11232,6 +11271,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550144946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550144941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aca26956d7846b4eae5d69c185cf8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 1604820646}
+  boyDialouge: {fileID: 1710517624}
+  boyDialougeText: {fileID: 1282528072}
+  boyNameText: {fileID: 1854523650}
+  dialouge:
+  - I should probably use the med kit
+  - ewr
+  - ewr
+  boyName:
+  - Boy
+  - Boy
+  - Boy
+  dialougeSprites:
+  - {fileID: 21300000, guid: c11663f1c98ef934b87e1a6d972c2b8b, type: 3}
+  - {fileID: 21300000, guid: 0838a7be65c960f449a60e20b6757c87, type: 3}
+  - {fileID: 21300000, guid: c11663f1c98ef934b87e1a6d972c2b8b, type: 3}
+  contButton: {fileID: 1859249030}
+  wordSpeed: 0.04
+  playerIsClose: 0
 --- !u!1 &1604820646
 GameObject:
   m_ObjectHideFlags: 0
@@ -13522,7 +13592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "F" to interact
+  m_Text: Press "E" to interact
 --- !u!222 &1699429538
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13960,7 +14030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit "F" to pick up
+  m_Text: Hit "E" to pick up
 --- !u!222 &2064680855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14084,6 +14154,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: DialougePanel
+      value: 
+      objectReference: {fileID: 1604820646}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: collisionOffset
       value: 0.02
       objectReference: {fileID: 0}
@@ -14191,8 +14265,8 @@ SceneRoots:
   - {fileID: 223478750}
   - {fileID: 1904331319}
   - {fileID: 1224413137}
-  - {fileID: 589729247}
   - {fileID: 1449872825}
+  - {fileID: 589729247}
   - {fileID: 1550144945}
   - {fileID: 1143238173}
   - {fileID: 1148653348}

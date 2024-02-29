@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
     public Text pickUpText;
     public bool pickUpAllowed;
     public Text ItemsPickedUp;
+    public kattNPC kattnpc;
     
 
     public void Start(){
@@ -17,7 +18,7 @@ public class Pickup : MonoBehaviour
     }
 
     public void Update(){
-        if(pickUpAllowed && Input.GetKeyDown(KeyCode.F))
+        if(pickUpAllowed && Input.GetKeyDown(KeyCode.E))
         PickUp();
     }
 

@@ -13,7 +13,6 @@ public class kattNPC : MonoBehaviour
     public Text boyDialougeText;
     public Text boyNameText;
 
-
     // Dialogue and name arrays
     public string[] dialouge;
     public string[] boyName;
@@ -36,7 +35,7 @@ public class kattNPC : MonoBehaviour
     {
         // If 'E' is pressed and player is close
         if(Input.GetKeyDown(KeyCode.E) && playerIsClose){
-    
+
 
             // If dialogue panel is active, reset the text
             if(DialougePanel.activeInHierarchy){
