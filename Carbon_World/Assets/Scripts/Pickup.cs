@@ -10,18 +10,18 @@ public class Pickup : MonoBehaviour
     public Text pickUpText;
     public bool pickUpAllowed;
     public Text ItemsPickedUp;
-    public kattNPC kattnpc;
-    
-
+  
     public void Start(){
         pickUpText.gameObject.SetActive(false);
     }
 
     public void Update(){
-        if(pickUpAllowed && Input.GetKeyDown(KeyCode.E))
+        if(pickUpAllowed && Input.GetKeyDown(KeyCode.E)){
         PickUp();
-    }
 
+    }
+    }
+    
     public void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.name.Equals("Player"))
         {

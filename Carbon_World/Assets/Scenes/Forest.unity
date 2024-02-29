@@ -682,6 +682,7 @@ MonoBehaviour:
   contButton: {fileID: 1553769770}
   wordSpeed: 0.04
   playerIsClose: 0
+  interactionCooldown: 0.5
 --- !u!61 &762536035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -725,7 +726,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.2}
+  m_Size: {x: 0.38, y: 0.41}
   m_EdgeRadius: 0
 --- !u!70 &762536036
 CapsuleCollider2D:
@@ -58602,6 +58603,7 @@ MonoBehaviour:
   contButton: {fileID: 166615349}
   wordSpeed: 0.04
   playerIsClose: 0
+  interactionCooldown: 0.5
 --- !u!61 &1386585316
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58645,7 +58647,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.2}
+  m_Size: {x: 0.36, y: 0.41}
   m_EdgeRadius: 0
 --- !u!70 &1386585317
 CapsuleCollider2D:
@@ -58722,7 +58724,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: dd9cc4b8d3a6c52449f68f3112cb9e20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
