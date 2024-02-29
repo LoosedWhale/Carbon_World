@@ -154,4 +154,5 @@ public static class Stats {
     public static int pickupCounter = 0;
     public static int trashCounter = 0;
     public static int keyCounter = 0;
+
 }
