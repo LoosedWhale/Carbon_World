@@ -18,8 +18,8 @@ public class mazeDOOR : MonoBehaviour
 
     // Update is called once per frame
     public void Update(){
-        if(closeEnoughDoorMaze && Input.GetKeyDown(KeyCode.F)) {
-            if(Stats.keyCounter < 1) {
+        if(closeEnoughDoorMaze && Input.GetKeyDown(KeyCode.E)) {
+            if(Stats.trashCounter < 1) {
                 interactWarningTextDoorMaze.gameObject.SetActive(true);
             } else {
                 Destroy(gameObject);

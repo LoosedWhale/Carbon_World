@@ -17,7 +17,7 @@ public class puzzle_open_kill : MonoBehaviour
 
     // Update is called once per frame
     public void Update(){
-        if(closeEnough && Input.GetKeyDown(KeyCode.F)) {
+        if(closeEnough && Input.GetKeyDown(KeyCode.E)) {
             if(Stats.fireballKills < 6) {
                 interactWarningText.gameObject.SetActive(true);
             } else {

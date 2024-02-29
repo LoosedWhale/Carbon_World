@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class kattNPC : MonoBehaviour
 {   
+
     // UI elements and related variables
     public GameObject DialougePanel;
     public Image boyDialouge;
@@ -34,6 +35,7 @@ public class kattNPC : MonoBehaviour
     {
         // If 'E' is pressed and player is close
         if(Input.GetKeyDown(KeyCode.E) && playerIsClose){
+
 
             // If dialogue panel is active, reset the text
             if(DialougePanel.activeInHierarchy){

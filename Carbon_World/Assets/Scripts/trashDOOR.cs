@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class doorHouse : MonoBehaviour
+public class trashDOOR : MonoBehaviour
 {
 
-    public Text interactTextDoor;
-    public Text interactWarningTextDoor;
-    public bool closeEnoughDoor;
+    public Text interactTextDoorMaze;
+    public Text interactWarningTextDoorMaze;
+    public bool closeEnoughDoorMaze;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +18,9 @@ public class doorHouse : MonoBehaviour
 
     // Update is called once per frame
     public void Update(){
-        if(closeEnoughDoor && Input.GetKeyDown(KeyCode.E)) {
-            if(Stats.pickupCounter < 5) {
-                interactWarningTextDoor.gameObject.SetActive(true);
+        if(closeEnoughDoorMaze && Input.GetKeyDown(KeyCode.E)) {
+            if(Stats.trashCounter < 10) {
+                interactWarningTextDoorMaze.gameObject.SetActive(true);
             } else {
                 Destroy(gameObject);
             }
@@ -30,16 +30,16 @@ public class doorHouse : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.name.Equals("Player"))
         {
-            interactTextDoor.gameObject.SetActive(true);
-            closeEnoughDoor = true;
+            interactTextDoorMaze.gameObject.SetActive(true);
+            closeEnoughDoorMaze = true;
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision){
         if(collision.gameObject.name.Equals("Player")){
-            interactWarningTextDoor.gameObject.SetActive(false);
-            interactTextDoor.gameObject.SetActive(false);
-            closeEnoughDoor = false;
+            interactWarningTextDoorMaze.gameObject.SetActive(false);
+            interactTextDoorMaze.gameObject.SetActive(false);
+            closeEnoughDoorMaze = false;
         }
     }
 }
