@@ -41,8 +41,23 @@ public class SwordAttack : MonoBehaviour
             {
                 // Subtract damage from enemy's health
                 enemy.Health -= damage;
+                print("enemy health: " + enemy.Health);
        
             }
+           
+        
+
+        }else if (other.CompareTag("Boss"))
+        {
+            Boss boss = other.GetComponent<Boss>();
+            
+            if (boss != null)
+            {
+                boss.Health -= damage;
+                print("boss health: " + boss.Health);
+            }
+
+            //Destroy(other.gameObject);
         }
     }
 

@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
+        Stats.fireballKills++;
         Destroy(gameObject);
     }
 
