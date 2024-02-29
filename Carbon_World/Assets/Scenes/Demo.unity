@@ -14095,6 +14095,10 @@ PrefabInstance:
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2363340790252885483, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3727454296626517836, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -14103,6 +14107,10 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 483ac222ba1b0da438c64583125fd544, type: 3}
+    - target: {fileID: 5042277443047243522, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5042277443047243522, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player

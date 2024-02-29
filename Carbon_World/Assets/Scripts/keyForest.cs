@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class keyForest : MonoBehaviour
 {
-    //bajsa på dig
+    
     [SerializeField]
     public Text pickUpTextKey;
     public bool pickUpAllowedKey;
