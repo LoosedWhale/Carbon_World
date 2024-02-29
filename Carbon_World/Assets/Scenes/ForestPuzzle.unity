@@ -35306,6 +35306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1d6e807e7180148b548c73d6e30886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 0}
   moveSpeed: 1
   collisionOffset: 0.05
   movementFilter:
@@ -41361,6 +41362,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: DialougePanel
+      value: 
+      objectReference: {fileID: 1043286861}
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: collisionOffset
       value: 0.02

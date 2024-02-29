@@ -321,6 +321,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
+      propertyPath: DialougePanel
+      value: 
+      objectReference: {fileID: 1479063247}
+    - target: {fileID: 547137108911440270, guid: 58b946bcda9aace47b95a6b783437bbf, type: 3}
       propertyPath: collisionOffset
       value: 0.02
       objectReference: {fileID: 0}
@@ -449,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1d6e807e7180148b548c73d6e30886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 1479063247}
   moveSpeed: 1
   collisionOffset: 0.05
   movementFilter:
@@ -675,7 +680,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0838a7be65c960f449a60e20b6757c87, type: 3}
   - {fileID: 21300000, guid: a1a005190ccdc4c46a27b6737b21072c, type: 3}
   contButton: {fileID: 1553769770}
-  wordSpeed: 0.06
+  wordSpeed: 0.04
   playerIsClose: 0
 --- !u!61 &762536035
 BoxCollider2D:
@@ -58595,7 +58600,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0838a7be65c960f449a60e20b6757c87, type: 3}
   - {fileID: 21300000, guid: 4735d5ae9f5404845a9f1841a23cf4d4, type: 3}
   contButton: {fileID: 166615349}
-  wordSpeed: 0.06
+  wordSpeed: 0.04
   playerIsClose: 0
 --- !u!61 &1386585316
 BoxCollider2D:
