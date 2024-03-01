@@ -10,6 +10,7 @@ public class kattNPC : MonoBehaviour
     public Image boyDialouge;
     public Text boyDialougeText;
     public Text boyNameText;
+    public Text dialogTextInteract;
 
     // Dialogue and name arrays
     public string[] dialouge;
@@ -32,6 +33,9 @@ public class kattNPC : MonoBehaviour
     public float interactionCooldown = 0.5f;
     private float lastInteractionTime;
 
+   public void Start(){
+        dialogTextInteract.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +56,7 @@ public class kattNPC : MonoBehaviour
                 else
                 {
                     // Otherwise, start the dialogue
+                    dialogTextInteract.gameObject.SetActive(false);
                     DialougePanel.SetActive(true);
                     StartCoroutine(Typing());
                     boyDialouge.sprite = dialougeSprites[0];
@@ -111,9 +116,12 @@ public class kattNPC : MonoBehaviour
     // Method called when player enters the NPC's trigger area
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Player"))
         {
+            dialogTextInteract.gameObject.SetActive(true);
             playerIsClose = true;
+            
         }
     }
 
@@ -122,7 +130,9 @@ public class kattNPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            dialogTextInteract.gameObject.SetActive(false);
             playerIsClose = false;
+            
             zeroText();
         }
     }
