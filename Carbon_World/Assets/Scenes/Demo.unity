@@ -1646,18 +1646,15 @@ MonoBehaviour:
   dialogTextInteract: {fileID: 1699429537}
   dialouge:
   - A map can be good so i can see where im going..
-  - I want to fix this
   - 'Im so tired of living here '
-  - i want to go out in the world and fix this
+  - I want to go out in the world and see what i can do
   - ....just like my brother
   boyName:
   - Boy
   - Boy
   - Boy
   - Boy
-  - Boy
   dialougeSprites:
-  - {fileID: 21300000, guid: c11663f1c98ef934b87e1a6d972c2b8b, type: 3}
   - {fileID: 21300000, guid: c11663f1c98ef934b87e1a6d972c2b8b, type: 3}
   - {fileID: 21300000, guid: 732ac305ffd0fc74f9bf98cfbd4063b9, type: 3}
   - {fileID: 21300000, guid: 732ac305ffd0fc74f9bf98cfbd4063b9, type: 3}
