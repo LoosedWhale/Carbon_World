@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2363340790252885483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -0.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10566491, y: 0.029272035}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2314046, y: 0.18433979}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &2211337017170923100
 MonoBehaviour:
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordCollider: {fileID: 6809101601303678046}
   damage: 3
+  attackOffset: 0.1
 --- !u!1 &3727454296626517836
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1d6e807e7180148b548c73d6e30886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialougePanel: {fileID: 0}
   moveSpeed: 1
   collisionOffset: 0.02
   movementFilter:
