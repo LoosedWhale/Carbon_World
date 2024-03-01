@@ -5,36 +5,43 @@ using UnityEngine;
 
 public class BossPlayerFollow : MonoBehaviour
 {
-    public GameObject boss;
-    private bool isPlayerInRange = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public string tagTarget = "Player";
+    public List<Collider2D> detectedObjs = new List<Collider2D>();
+
+    private Animator animator;
+    public Collider2D col;
+
+    void Start()
     {
-        if (collision.CompareTag("Player"))
+        col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == tagTarget)
         {
-            isPlayerInRange = true;
-            boss.GetComponent<Boss>().DetectedPlayer(collision);
+            detectedObjs.Add(collider);
+            
+        }
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", true);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isPlayerInRange = false;
-            boss.GetComponent<Boss>().UnDetectedPlayer(collision);
-        }
-    }
 
-    private void Update()
+    void OnTriggerExit2D(Collider2D collider)
     {
-        if (isPlayerInRange)
+        if (collider.gameObject.tag == tagTarget)
         {
-            boss.GetComponent<Boss>().SetCanMove(true);
+            detectedObjs.Remove(collider);
+            
         }
-        else
+        if (animator != null)
         {
-            boss.GetComponent<Boss>().SetCanMove(false);
+            animator.SetBool("isWalking", false);
         }
     }
 }

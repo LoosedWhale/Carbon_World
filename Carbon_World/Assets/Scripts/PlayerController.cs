@@ -147,6 +147,11 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+
+
+
+
 }
 
 public static class Stats {
