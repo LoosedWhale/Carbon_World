@@ -12,27 +12,20 @@ public class Boss : MonoBehaviour {
     public float deceleration = 5f;
     public float maxSpeed = 5f;
     public float stoppingDistance = 1f;
-
+    private bool canMove = true;
 
     public Transform target;
     public bool isMoving = false;
 
-    //private float timeBtwDamage = 1.5f;
-
-    public GameObject playerFollowArea;
-
-    private GameObject player;
-
     public Slider healthBar;
     private Animator anim;
     public bool isDead;
-   
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
     }
+
     public float Health
     {
         set
@@ -44,26 +37,21 @@ public class Boss : MonoBehaviour {
                 Defeated();
                 isDead = true;
                 StartCoroutine(RemoveEnemyWithDelay());
-         
             }
         }
         get { return health; }
     }
 
-
-
     public void Defeated()
     {
         anim.SetTrigger("Defeated");
     }
-    
 
     private IEnumerator RemoveEnemyWithDelay()
     {
         healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.5f);
         RemoveEnemy();
-        
     }
 
     public void RemoveEnemy()
@@ -73,36 +61,17 @@ public class Boss : MonoBehaviour {
 
     private void Update()
     {
-
-        if (health <= 25)
-        {
-            print("You can't hurt me [dialog here for epic]");
-            //anim.SetTrigger("stageTwo");
-        }
-
-
-        /*
-        // give the player some time to recover before taking more damage !
-        if (timeBtwDamage > 0) {
-            timeBtwDamage -= Time.deltaTime;
-        }
-        */
-
         healthBar.value = health;
-
 
         if (isMoving && target != null)
         {
             Vector3 direction = (target.position - transform.position).normalized;
 
             // Calculate the current speed based on acceleration and deceleration
-            float currentSpeed = Mathf.MoveTowards(GetComponent<Rigidbody>().velocity.magnitude, maxSpeed, Time.deltaTime * acceleration);
+            float currentSpeed = Mathf.MoveTowards(GetComponent<Rigidbody2D>().velocity.magnitude, maxSpeed, Time.deltaTime * acceleration);
 
             // Apply the velocity
-            GetComponent<Rigidbody>().velocity = direction * currentSpeed;
-
-            // Rotate towards the player
-            transform.rotation = Quaternion.LookRotation(direction);
+            GetComponent<Rigidbody2D>().velocity = direction * currentSpeed;
 
             // Check if close enough to stop
             float distanceToTarget = Vector3.Distance(transform.position, target.position);
@@ -111,20 +80,17 @@ public class Boss : MonoBehaviour {
                 isMoving = false;
             }
         }
-
     }
+
     public void MoveToPlayer(Transform playerTransform)
     {
-        player = playerTransform.gameObject;
+        target = playerTransform;
         isMoving = true;
-
     }
-
 
     public void DetectedPlayer(Collider2D other)
     {
-        print("This shit worked lmao");
-        if (other.CompareTag("Player") && isDead == false)
+        if (canMove && other.CompareTag("Player") && isDead == false)
         {
             MoveToPlayer(other.transform);
         }
@@ -135,10 +101,14 @@ public class Boss : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             isMoving = false;
-            player = null;
+            target = null;
         }
     }
 
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+    }
 
 
 
