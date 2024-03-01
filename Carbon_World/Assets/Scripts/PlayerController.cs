@@ -108,11 +108,10 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         if(DialougePanel.activeInHierarchy){
-                print("no");
-            }
-        else{
-        // Trigger the sword attack animation
-        animator.SetTrigger("swordAttack");
+            print("no");
+        } else {
+            // Trigger the sword attack animation
+            animator.SetTrigger("swordAttack");
         }
 
     }
@@ -159,5 +158,6 @@ public static class Stats {
     public static int pickupCounter = 0;
     public static int trashCounter = 0;
     public static int keyCounter = 0;
+    public static int keys = 0;
 
 }

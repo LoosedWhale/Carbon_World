@@ -1938,6 +1938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f0f3536944be44c9a1f4c7489b2fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactTextDoorMaze: {fileID: 1500171340}
+  interactWarningTextDoorMaze: {fileID: 1500171340}
+  closeEnoughDoorMaze: 0
 --- !u!1 &508565804
 GameObject:
   m_ObjectHideFlags: 0
