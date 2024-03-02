@@ -6,6 +6,7 @@ public class SwordAttack : MonoBehaviour
     [SerializeField] private float damage = 5;
     public float attackOffset;
 
+
     public void AttackRight()
     {
         print("Attack right");
@@ -48,7 +49,7 @@ public class SwordAttack : MonoBehaviour
             
             if (boss != null)
             {
-                boss.Health -= damage;
+                boss.TakeDamage((int)damage);
                 print("boss health: " + boss.Health);
             }
 

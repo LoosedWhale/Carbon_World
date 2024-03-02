@@ -33603,7 +33603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  moveSpeed: 500
+  moveSpeed: 150
   bossPlayerFollow: {fileID: 1681016304}
   healthBar: {fileID: 381046193}
   isDead: 0

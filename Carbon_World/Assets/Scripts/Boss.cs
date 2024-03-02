@@ -17,17 +17,18 @@ public class Boss : MonoBehaviour {
 
     public bool isDead = false;
 
-    public float timeBtwDamage = 1.5f;
+    public float hitStunDuration = 1f;
     
 
     public string playerTag = "Player";
+    public bool canWalk = true;
 
     
     private void Start()
     {
         anim = GetComponent<Animator>();
         bossRigidbody = GetComponent<Rigidbody2D>();
-        moveSpeed = 50f;
+        moveSpeed = 150f;
     }
 
     public float Health
@@ -57,6 +58,29 @@ public class Boss : MonoBehaviour {
         healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;   
+        if (health <= 0)
+            {
+                Defeated();
+                StartCoroutine(RemoveEnemyWithDelay());
+            }
+
+        anim.SetTrigger("TakeHit");
+
+        // Start hit stun coroutine
+        StartCoroutine(HitStun());
+    }
+
+    private IEnumerator HitStun()
+    {
+        canWalk = false;
+        yield return new WaitForSeconds(hitStunDuration);
+        canWalk = true;
     }
 
     void FixedUpdate()
