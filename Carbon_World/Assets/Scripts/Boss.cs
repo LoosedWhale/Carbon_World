@@ -124,13 +124,23 @@ public class Boss : MonoBehaviour {
     {
         bossAttack.enabled = true;
         // Select a random attack animation
-        //int attackNumber = Random.Range(1, 4);  // Adjust this as needed
+        int attackNumber = Random.Range(1, 3); 
+        if (attackNumber == 1) 
+        {
+            anim.SetTrigger("atk" + 4);
+            StartCoroutine(Attack());
+        }
+        else if (attackNumber == 2)
+        {
+            anim.SetTrigger("atk_air");
+            StartCoroutine(Attack());
+        }
 
         // Trigger the attack animation
-        anim.SetTrigger("atk" + 4);
+        //anim.SetTrigger("atk" + 4);
 
         // Start the attack coroutine
-        StartCoroutine(Attack());
+        //StartCoroutine(Attack());
     }
 
     private IEnumerator Attack()
