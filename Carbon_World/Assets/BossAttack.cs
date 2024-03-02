@@ -14,12 +14,14 @@ public class BossAttack : MonoBehaviour
     void Start()
     {
         Attack = GetComponent<Collider2D>();
+        Attack.enabled = false;  // Add this line
     }
 
     private void OnTriggerEnter2D(Collider2D Attack)
     {
         if (Attack.CompareTag("Player"))
         {
+            this.Attack.enabled = true;  // Add this line
             PlayerHealth player = Attack.GetComponent<PlayerHealth>();
 
             if (player != null && player.Health > 0)

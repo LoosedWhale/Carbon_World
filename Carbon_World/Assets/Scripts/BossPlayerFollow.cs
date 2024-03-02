@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using Random = UnityEngine.Random;
 
 public class BossPlayerFollow : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class BossPlayerFollow : MonoBehaviour
             if (boss.canWalk)
             {
                 animator.SetBool("isWalking", true);
+                boss.StartAttack();
             }
         }
         
@@ -49,8 +51,8 @@ public class BossPlayerFollow : MonoBehaviour
             if (boss.canWalk)
             {
                 animator.SetBool("isWalking", false);
+                boss.StopAttack();  // Add this line
             }
         }
-        
     }
 }

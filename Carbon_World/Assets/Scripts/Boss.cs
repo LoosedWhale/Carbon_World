@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Boss : MonoBehaviour {
 
     public int health;
    
-
+    public BossAttack bossAttack;
     public float moveSpeed;   
     public BossPlayerFollow bossPlayerFollow;
 
@@ -17,8 +18,10 @@ public class Boss : MonoBehaviour {
 
     public bool isDead = false;
 
-    public float hitStunDuration = 1f;
-    
+
+    public float hitStunDuration = 1.0f;
+    public float attackDuration = 3.0f;
+
 
     public string playerTag = "Player";
     public bool canWalk = true;
@@ -29,6 +32,7 @@ public class Boss : MonoBehaviour {
         anim = GetComponent<Animator>();
         bossRigidbody = GetComponent<Rigidbody2D>();
         moveSpeed = 150f;
+        StartCoroutine(AttackLoop());
     }
 
     public float Health
@@ -111,7 +115,56 @@ public class Boss : MonoBehaviour {
         healthBar.value = health;
     }
 
- 
+    public bool CanWalk()
+    {
+        return canWalk;
+    }
+    
+    public void StartAttack()
+    {
+        bossAttack.enabled = true;
+        // Select a random attack animation
+        //int attackNumber = Random.Range(1, 4);  // Adjust this as needed
+
+        // Trigger the attack animation
+        anim.SetTrigger("atk" + 4);
+
+        // Start the attack coroutine
+        StartCoroutine(Attack());
+    }
+
+    private IEnumerator Attack()
+    {
+        // Enable the boss attack collider
+        bossAttack.Attack.enabled = true;
+
+        // Wait for the attack duration
+        yield return new WaitForSeconds(attackDuration);
+
+        // Disable the boss attack collider
+        bossAttack.Attack.enabled = false;
+    }
+    
+    public void StopAttack()
+    {
+        StopCoroutine(Attack());
+        bossAttack.enabled = false;
+    }
+
+    private IEnumerator AttackLoop()
+    {
+        while (true)
+        {
+            // Wait for a random interval between 2 and 5 seconds
+            yield return new WaitForSeconds(Random.Range(3, 6));
+
+            // Start an attack if the boss can walk
+            if (CanWalk())
+            {
+                StartAttack();
+            }
+        }
+    }
     
 
 }

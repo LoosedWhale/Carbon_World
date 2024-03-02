@@ -32932,7 +32932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf68d2e5b3f3744386185b3552d5d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30
 --- !u!1 &1217851553
 GameObject:
   m_ObjectHideFlags: 0
@@ -33603,12 +33603,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  bossAttack: {fileID: 1842747686}
   moveSpeed: 150
   bossPlayerFollow: {fileID: 1681016304}
   healthBar: {fileID: 381046193}
   isDead: 0
-  timeBtwDamage: 1.5
+  hitStunDuration: 1
+  attackDuration: 3
   playerTag: Player
+  canWalk: 1
 --- !u!50 &1588742711
 Rigidbody2D:
   serializedVersion: 4
@@ -33760,7 +33763,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842747683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -33785,7 +33788,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23, y: -0.5}
+  m_Offset: {x: 0.42, y: -0.28}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -33796,7 +33799,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41, y: 0.26}
+  m_Size: {x: 0.74, y: 0.33}
   m_EdgeRadius: 0
 --- !u!114 &1842747686
 MonoBehaviour:
