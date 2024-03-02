@@ -41,6 +41,7 @@ public class keyForest : MonoBehaviour
         //nedan finns i playercontroller
         Stats.trashCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
         //ovan finns i playercontroller
+        
  
         Destroy(gameObject);
     }
