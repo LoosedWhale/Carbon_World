@@ -9,6 +9,7 @@ public class BossPlayerFollow : MonoBehaviour
     public string tagTarget = "Player";
     public List<Collider2D> detectedObjs = new List<Collider2D>();
 
+    public Boss boss;
     private Animator animator;
     public Collider2D col;
 
@@ -23,12 +24,12 @@ public class BossPlayerFollow : MonoBehaviour
         if (collider.gameObject.tag == tagTarget)
         {
             detectedObjs.Add(collider);
-            
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", true);
+            }
         }
-        if (animator != null)
-        {
-            animator.SetBool("isWalking", true);
-        }
+        
     }
 
 
@@ -37,11 +38,11 @@ public class BossPlayerFollow : MonoBehaviour
         if (collider.gameObject.tag == tagTarget)
         {
             detectedObjs.Remove(collider);
-            
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", false);
+            }
         }
-        if (animator != null)
-        {
-            animator.SetBool("isWalking", false);
-        }
+        
     }
 }

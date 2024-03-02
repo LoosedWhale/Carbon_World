@@ -27,7 +27,6 @@ public class SwordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("TRIGGER ENTER!!!!!!!!!!!!!");
         if (other.CompareTag("Enemy"))
         {
             // Access the health property directly

@@ -47,6 +47,8 @@ public class Boss : MonoBehaviour {
 
     public void Defeated()
     {
+        anim.SetBool("isWalking", false);
+        
         anim.SetTrigger("Defeated");
     }
 
@@ -59,18 +61,31 @@ public class Boss : MonoBehaviour {
 
     void FixedUpdate()
     {
-
+        
         if (bossPlayerFollow.detectedObjs.Count > 0)
-        //move towards detected object
-        {
-            //calculate direction
+        {   
+            // Calculate direction
             Vector2 direction = (bossPlayerFollow.detectedObjs[0].transform.position - transform.position).normalized;
 
-            //move towards detected object
+            // Move towards detected object
             bossRigidbody.AddForce(direction * moveSpeed * Time.deltaTime);
+
+            // Flip boss to face the player
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 0);
+            }
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 0);
+            }
         }
     }
 
+    void Update()
+    {
+        healthBar.value = health;
+    }
 
  
     
