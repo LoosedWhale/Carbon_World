@@ -16,7 +16,7 @@ public class BossAttack : MonoBehaviour
         Attack = GetComponent<Collider2D>();
     }
 
-       private void OnTriggerEnter2D(Collider2D Attack)
+    private void OnTriggerEnter2D(Collider2D Attack)
     {
         if (Attack.CompareTag("Player"))
         {

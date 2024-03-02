@@ -13,10 +13,18 @@ public class BossPlayerFollow : MonoBehaviour
     private Animator animator;
     public Collider2D col;
 
+
     void Start()
     {
         col = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
+        animator = boss.GetComponent<Animator>();
+
+        //In case the animator is not found
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found on " + boss.gameObject.name);
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -24,7 +32,7 @@ public class BossPlayerFollow : MonoBehaviour
         if (collider.gameObject.tag == tagTarget)
         {
             detectedObjs.Add(collider);
-            if (animator != null)
+            if (boss.canWalk)
             {
                 animator.SetBool("isWalking", true);
             }
@@ -38,7 +46,7 @@ public class BossPlayerFollow : MonoBehaviour
         if (collider.gameObject.tag == tagTarget)
         {
             detectedObjs.Remove(collider);
-            if (animator != null)
+            if (boss.canWalk)
             {
                 animator.SetBool("isWalking", false);
             }
