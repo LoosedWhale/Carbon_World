@@ -4,25 +4,21 @@ public class SwordAttack : MonoBehaviour
 {
     public Collider2D swordCollider;
     [SerializeField] private float damage = 5;
-    Vector2 rightAttackOffset;
+    public float attackOffset;
 
-    private void Start()
-    {
-        rightAttackOffset = transform.position;
-    }
 
     public void AttackRight()
     {
         print("Attack right");
         swordCollider.enabled = true;
-        transform.localPosition = rightAttackOffset;
+        transform.localPosition = new Vector2(attackOffset, 0);
     }
 
     public void AttackLeft()
     {
         print("Attack left");
         swordCollider.enabled = true;
-        transform.localPosition = new Vector3(-rightAttackOffset.x, rightAttackOffset.y);
+        transform.localPosition = new Vector2(-attackOffset, 0);
     }
 
     public void StopAttack()
@@ -41,8 +37,23 @@ public class SwordAttack : MonoBehaviour
             {
                 // Subtract damage from enemy's health
                 enemy.Health -= damage;
+                print("enemy health: " + enemy.Health);
        
             }
+           
+        
+
+        }else if (other.CompareTag("Boss"))
+        {
+            Boss boss = other.GetComponent<Boss>();
+            
+            if (boss != null)
+            {
+                boss.TakeDamage((int)damage);
+                print("boss health: " + boss.Health);
+            }
+
+            //Destroy(other.gameObject);
         }
     }
 

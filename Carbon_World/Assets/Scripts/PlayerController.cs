@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject DialougePanel;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -106,8 +107,13 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
-        // Trigger the sword attack animation
-        animator.SetTrigger("swordAttack");
+        if(DialougePanel.activeInHierarchy){
+            print("no");
+        } else {
+            // Trigger the sword attack animation
+            animator.SetTrigger("swordAttack");
+        }
+
     }
 
     public void SwordAttack()
@@ -140,4 +146,18 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+
+
+
+
+}
+
+public static class Stats {
+    public static int fireballKills = 0;
+    public static int pickupCounter = 0;
+    public static int trashCounter = 0;
+    public static int keyCounter = 0;
+    public static int keys = 0;
+
 }

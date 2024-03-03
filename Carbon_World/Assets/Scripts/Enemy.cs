@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Animator animator;
-    private float health = 4f;
+    private float health = 5f;
 
     private void Start()
     {
@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
+        Stats.fireballKills++;
         Destroy(gameObject);
     }
 
