@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
         // Remove player
         print("Player defeated");
         player.GetComponent<PlayerController>().enabled = false;
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
         //Destroy(gameObject);
 
        
