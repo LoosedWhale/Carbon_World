@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
 {
     //bajsa på dig
     [SerializeField]
+    public GameObject pickupSound;
     public Text pickUpText;
     public bool pickUpAllowed;
     public Text ItemsPickedUp;
@@ -17,8 +18,8 @@ public class Pickup : MonoBehaviour
 
     public void Update(){
         if(pickUpAllowed && Input.GetKeyDown(KeyCode.E)){
-        
-        PickUp();
+            
+            PickUp();
 
     }
     }
@@ -39,6 +40,7 @@ public class Pickup : MonoBehaviour
     }
 
     public void PickUp(){
+        pickupSound.gameObject.GetComponent<AudioSource>().Play();
         //nedan finns i playercontroller
         Stats.pickupCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
         //ovan finns i playercontroller
