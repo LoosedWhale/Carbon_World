@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         // Remove player
         print("Player defeated");
         player.GetComponent<PlayerController>().enabled = false;
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
         //Destroy(gameObject);
 
        

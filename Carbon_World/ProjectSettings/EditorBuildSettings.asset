@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main cutscene.unity
     guid: 14639ae2231ff484bb00f0b521869fc1
+  - enabled: 1
+    path: Assets/Scenes/BossComplete.unity
+    guid: 838913f9e4f8e4e4db7bf71b54de7754
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f6a826003c6cb254a961c0b8d66ea191, type: 2}

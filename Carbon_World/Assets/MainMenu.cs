@@ -19,4 +19,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void RePlayGame()
+    {
+        // Load the next scene
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+    }
+
 }

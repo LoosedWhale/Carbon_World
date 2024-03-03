@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour {
 
@@ -62,6 +63,7 @@ public class Boss : MonoBehaviour {
         healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        SceneManager.LoadScene(7, LoadSceneMode.Single);
     }
 
 
