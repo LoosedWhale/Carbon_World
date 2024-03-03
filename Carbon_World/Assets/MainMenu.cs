@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Load the next scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //changed to scene 5 ? idk but it needs to play the cutscene before.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
     }
 
     public void QuitGame()
