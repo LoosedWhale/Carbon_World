@@ -2,37 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour {
 
     public int health;
-    public int damage;
-
-    public float acceleration = 5f;
-    public float deceleration = 5f;
-    public float maxSpeed = 5f;
-    public float stoppingDistance = 1f;
-
-
-    public Transform target;
-    public bool isMoving = false;
-
-    //private float timeBtwDamage = 1.5f;
-
-    public GameObject playerFollowArea;
-
-    private GameObject player;
+   
+    public BossAttack bossAttack;
+    public float moveSpeed;   
+    public BossPlayerFollow bossPlayerFollow;
 
     public Slider healthBar;
     private Animator anim;
-    public bool isDead;
-   
+    private Rigidbody2D bossRigidbody;
 
+    public bool isDead = false;
+
+
+    public float hitStunDuration = 1.0f;
+    public float attackDuration = 3.0f;
+
+
+    public string playerTag = "Player";
+    public bool canWalk = true;
+
+    
     private void Start()
     {
         anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        bossRigidbody = GetComponent<Rigidbody2D>();
+        moveSpeed = 150f;
+        StartCoroutine(AttackLoop());
     }
+
     public float Health
     {
         set
@@ -42,115 +45,138 @@ public class Boss : MonoBehaviour {
             if (health <= 0)
             {
                 Defeated();
-                isDead = true;
                 StartCoroutine(RemoveEnemyWithDelay());
-         
             }
         }
         get { return health; }
     }
 
-
-
     public void Defeated()
     {
+        anim.SetBool("isWalking", false);
+        
         anim.SetTrigger("Defeated");
     }
-    
 
     private IEnumerator RemoveEnemyWithDelay()
     {
         healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.5f);
-        RemoveEnemy();
-        
-    }
-
-    public void RemoveEnemy()
-    {
         Destroy(gameObject);
+        SceneManager.LoadScene(7, LoadSceneMode.Single);
     }
 
-    private void Update()
+
+    public void TakeDamage(int damage)
     {
-
-        if (health <= 25)
-        {
-            print("You can't hurt me [dialog here for epic]");
-            //anim.SetTrigger("stageTwo");
-        }
-
-
-        /*
-        // give the player some time to recover before taking more damage !
-        if (timeBtwDamage > 0) {
-            timeBtwDamage -= Time.deltaTime;
-        }
-        */
-
-        healthBar.value = health;
-
-
-        if (isMoving && target != null)
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-
-            // Calculate the current speed based on acceleration and deceleration
-            float currentSpeed = Mathf.MoveTowards(GetComponent<Rigidbody>().velocity.magnitude, maxSpeed, Time.deltaTime * acceleration);
-
-            // Apply the velocity
-            GetComponent<Rigidbody>().velocity = direction * currentSpeed;
-
-            // Rotate towards the player
-            transform.rotation = Quaternion.LookRotation(direction);
-
-            // Check if close enough to stop
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
-            if (distanceToTarget < stoppingDistance)
+        health -= damage;   
+        if (health <= 0)
             {
-                isMoving = false;
+                Defeated();
+                StartCoroutine(RemoveEnemyWithDelay());
+            }
+
+        anim.SetTrigger("TakeHit");
+
+        // Start hit stun coroutine
+        StartCoroutine(HitStun());
+    }
+
+    private IEnumerator HitStun()
+    {
+        canWalk = false;
+        yield return new WaitForSeconds(hitStunDuration);
+        canWalk = true;
+    }
+
+    void FixedUpdate()
+    {
+        
+        if (bossPlayerFollow.detectedObjs.Count > 0)
+        {   
+            // Calculate direction
+            Vector2 direction = (bossPlayerFollow.detectedObjs[0].transform.position - transform.position).normalized;
+
+            // Move towards detected object
+            bossRigidbody.AddForce(direction * moveSpeed * Time.deltaTime);
+
+            // Flip boss to face the player
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 0);
+            }
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 0);
             }
         }
-
-    }
-    public void MoveToPlayer(Transform playerTransform)
-    {
-        player = playerTransform.gameObject;
-        isMoving = true;
-
     }
 
-
-    public void DetectedPlayer(Collider2D other)
+    void Update()
     {
-        print("This shit worked lmao");
-        if (other.CompareTag("Player") && isDead == false)
+        healthBar.value = health;
+    }
+
+    public bool CanWalk()
+    {
+        return canWalk;
+    }
+    
+    public void StartAttack()
+    {
+        bossAttack.enabled = true;
+        // Select a random attack animation
+        int attackNumber = Random.Range(1, 3); 
+        if (attackNumber == 1) 
         {
-            MoveToPlayer(other.transform);
+            anim.SetTrigger("atk" + 4);
+            StartCoroutine(Attack());
         }
-    }
-
-    public void UnDetectedPlayer(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        else if (attackNumber == 2)
         {
-            isMoving = false;
-            player = null;
+            anim.SetTrigger("atk_air");
+            StartCoroutine(Attack());
         }
+
+        // Trigger the attack animation
+        //anim.SetTrigger("atk" + 4);
+
+        // Start the attack coroutine
+        //StartCoroutine(Attack());
     }
 
-
-
-
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
+    private IEnumerator Attack()
     {
-        // deal the player damage ! 
-        if (other.CompareTag("Player") && isDead == false) {
-            if (timeBtwDamage <= 0) {
-                other.GetComponent<Player>().health -= damage;
+        // Enable the boss attack collider
+        bossAttack.Attack.enabled = true;
+
+        // Wait for the attack duration
+        yield return new WaitForSeconds(attackDuration);
+
+        // Disable the boss attack collider
+        bossAttack.Attack.enabled = false;
+    }
+    
+    public void StopAttack()
+    {
+        StopCoroutine(Attack());
+        bossAttack.enabled = false;
+    }
+
+    private IEnumerator AttackLoop()
+    {
+        while (true)
+        {
+            // Wait for a random interval between 2 and 5 seconds
+            yield return new WaitForSeconds(Random.Range(3, 6));
+
+            // Start an attack if the boss can walk
+            if (CanWalk())
+            {
+                StartAttack();
             }
-        } 
+        }
     }
-    */
+    
+
 }

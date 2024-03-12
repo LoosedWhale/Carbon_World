@@ -9,6 +9,7 @@ public class keyForest : MonoBehaviour
     // THERE ARE DIFFERENT DOOR MECHANISMS BOTH TRASHDOOR AND MAZEDOOR THESE CAN BE MEREGED INTO ONE
     //WITH BETTER CODE BUT I SUCK SORRY
     [SerializeField]
+    public GameObject pickupSound;
     public Text pickUpTextKey;
     public bool pickUpAllowedKey;
 
@@ -38,9 +39,11 @@ public class keyForest : MonoBehaviour
     }
 
     public void PickUpKey(){
+        pickupSound.gameObject.GetComponent<AudioSource>().Play();
         //nedan finns i playercontroller
         Stats.trashCounter++; //denna används till enemy på samma sätt när man dödat alla kan man gå vidare i pusslet
         //ovan finns i playercontroller
+        
  
         Destroy(gameObject);
     }
